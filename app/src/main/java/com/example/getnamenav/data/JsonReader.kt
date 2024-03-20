@@ -1,4 +1,4 @@
-package com.example.getname.jsonReader
+package com.example.getnamenav.data
 
 import android.content.Context
 import com.example.getnamenav.R
@@ -11,7 +11,7 @@ public class JsonReader {
   val reader = InputStreamReader(inputStream)
   return reader.readText()
  }
- fun GetNames(context: Context):PeopleList{
+ fun GetNames(context: Context): PeopleList {
   val json = JsonReader().readJsonFile(context, R.raw.names)   //получаю список имен
   val gson = Gson()
   return gson.fromJson(json, PeopleList::class.java)

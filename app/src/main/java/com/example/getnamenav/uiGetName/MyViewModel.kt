@@ -1,10 +1,19 @@
 package com.example.getnamenav.uiGetName
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.getnamenav.data.Mymap
+import com.example.getnamenav.data.PeopleList
 
 class MyViewModel : ViewModel() {
+
+
+
+    var mymap=Mymap()
+    val mutablePeopleList: MutableLiveData<List<String>> by lazy {
+        MutableLiveData<List<String>>()
+    }
+
     val GetSelectedCharaters: MutableLiveData<String> by lazy {
         MutableLiveData<String>()
     }
@@ -17,15 +26,15 @@ class MyViewModel : ViewModel() {
     val GetSelectedNation: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
-
-
-    val GetNameButonCleked: MutableLiveData<Boolean> by lazy {
-        MutableLiveData<Boolean>()
-    }
-
-    fun GetNameButtonClicked(){
-        Log.e("tag","clkekid")
-        GetNameButonCleked.value = true
+    fun GetFilterList(peopleList: PeopleList){
+        val filteredNames = peopleList.people.filter { person ->                      // фильтрует список имен проходя по всем, если все соответсвующие строки в текущем person равны соответсвующем выбранному пункту в приложении то оставляет в списке
+            (person.gender == mymap.GenderMap.get(this.GetSelectedGender.value) || mymap.GenderMap.get(
+                this.GetSelectedGender.value
+            ) == "Любое") && (person.nationality == mymap.NationMap.get(this.GetSelectedNation.value) || mymap.NationMap.get(   //или соответсвуют или равны "Любое"
+                this.GetSelectedNation.value
+            ) == "Любое") && person.сharacters == this.GetSelectedCharaters.value!!.toInt()
+        }.map { it.name }
+       mutablePeopleList.value=filteredNames
     }
 
 }

@@ -1,0 +1,27 @@
+<resources>
+
+
+    <string name="menu_home">Весь список</string>
+    <string name="menu_Main">Главная</string>
+    <string name="Zagolovoc">Получить имя</string>
+    <string name="hintCharakters">Количество букв в Имени</string>
+    <string name="hintCountNames">Сколько имен вывести</string>
+    <string name="buttonGetNames">GETNAME</string>
+
+    <string name="charaktersCount">"Введите желаемое количество букв в имени"</string>
+    <string name="namesCount">"Введите желаемое количество имен для вывода"</string>
+    <string name="charaktersCountEror">"Длинна имени должна быть от 2 до 10 символов"</string>
+    <string name="namesCountEror">"Введите желаемое количество имен для вывода"</string>
+
+    <array name="nations">
+        <item>"Русское"</item>
+        <item>"Американское"</item>
+        <item>"Греческое"</item>
+        <item>"Любое"</item>
+    </array>
+    <array name="genders">
+        <item>"Мужское"</item>
+        <item>"Женское"</item>
+        <item>"Любое"</item>
+    </array>
+</resources>

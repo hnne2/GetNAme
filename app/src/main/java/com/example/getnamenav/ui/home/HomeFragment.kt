@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.getname.jsonReader.JsonReader
+import com.example.getnamenav.data.JsonReader
 import com.example.getnamenav.databinding.FragmentHomeBinding
 
 

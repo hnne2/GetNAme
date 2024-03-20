@@ -1,8 +1,8 @@
-package com.example.getname.jsonReader
+package com.example.getnamenav.data
 
 import com.google.gson.annotations.SerializedName
 
-data class PeopleList(
+data class PeopleList(                // джейсон библиотека ковертирует json объекты в такие kotlin объекты
     @SerializedName("array")
     val people: List<Person>
 )

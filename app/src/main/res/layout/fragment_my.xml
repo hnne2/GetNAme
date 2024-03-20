@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.getnamenav.MyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activiti.MainActivity">
+
+        <Spinner
+            android:id="@+id/spinner_gender"
+            android:layout_width="308dp"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_spinner_fruit"
+            android:dropDownVerticalOffset="40dp"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            />
+
+
+        <Spinner
+            android:id="@+id/spinner_nation"
+            android:layout_width="308dp"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_spinner_fruit"
+            android:dropDownVerticalOffset="40dp"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_gender" />
+
+        <EditText
+            android:id="@+id/editTextNumberSigned"
+            android:layout_width="265dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Количество букв в Имени"
+            android:inputType="numberSigned"
+            android:text="@={viewModel.getSelectedCharaters}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_nation" />
+
+        <EditText
+            android:id="@+id/editTextNumberSigned2"
+            android:layout_width="268dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="Сколько имен вывести"
+            android:inputType="numberSigned"
+            android:text="@={viewModel.getSelectedCauntName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="254dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal"
+            android:text="Get Name"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="195dp"
+            android:layout_height="58dp"
+            android:backgroundTint="#518821"
+            android:onClick="@{() -> viewModel.GetNameButtonClicked()}"
+            android:text="GetName"
+            app:iconTint="#CA2121"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

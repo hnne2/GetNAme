@@ -1,4 +1,4 @@
-package com.example.getnamenav
+package com.example.getnamenav.uiGetName
 
 import android.os.Bundle
 import android.util.Log
@@ -7,15 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.getname.dialog.CustomDialog
 import com.example.getname.jsonReader.JsonReader
-import com.example.getname.jsonReader.PeopleList
 import com.example.getnamenav.databinding.FragmentMyBinding
-import com.google.gson.Gson
 
 class MyFragment() : Fragment() {
     private var _binding: FragmentMyBinding? = null
@@ -34,12 +31,8 @@ class MyFragment() : Fragment() {
         _binding = FragmentMyBinding.inflate(inflater, container, false)
         val view: View = binding.root
 
-
         viewModel = ViewModelProvider(requireActivity()).get(MyViewModel::class.java)
         binding.viewModel = viewModel
-
-        Log.e("viewModel", viewModel.toString())
-
 
 
 
@@ -56,12 +49,6 @@ class MyFragment() : Fragment() {
         val NationSpinerAdapter = ArrayAdapter(view.context, android.R.layout.simple_spinner_item, NationSpinerListOfItems)
         NationSpinerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         NationSpiner.adapter=NationSpinerAdapter
-
-
-
-
-
-
 
         NationSpiner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

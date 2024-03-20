@@ -1,4 +1,4 @@
-package com.example.getnamenav
+package com.example.getnamenav.uiGetName
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -22,7 +22,6 @@ class MyViewModel : ViewModel() {
     val GetNameButonCleked: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>()
     }
-
 
     fun GetNameButtonClicked(){
         Log.e("tag","clkekid")

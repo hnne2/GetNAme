@@ -37,6 +37,7 @@
             android:layout_marginTop="32dp"
             android:background="@drawable/bg_spinner_fruit"
             android:dropDownVerticalOffset="40dp"
+            android:textColor="@color/black"
             app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
